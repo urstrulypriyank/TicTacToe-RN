@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from "react-native";
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Index from "./src";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <SafeAreaView className="flex flex-1">
+      <StatusBar hidden />
+      <View className="flex flex-1  items-center  ">
+        <Text className="w-screen  text-center text-3xl font-bold py-3 bg-yellow-500">
+          Tic Tac Toe
+        </Text>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        <Index />
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default App;
+
+const styles = StyleSheet.create({});
