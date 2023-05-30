@@ -14,16 +14,21 @@ const Index = () => {
     boardState.push(row);
   }
 
-  const [turn, setTurn] = useState(true);
+  const [turn, setTurn] = useState("X");
   return (
     <View className="flex flex-1 justify-center items-center m-5">
-      <Text>Index</Text>
+      <Text>current turn: {turn}</Text>
 
       <View style={styles.container}>
         {boardState.map((item, rowIndex) => (
           <View key={rowIndex} style={styles.row}>
             {item.map((cell, columnIndex) => (
-              <Cell key={columnIndex} cell turn setTurn />
+              <Cell
+                key={columnIndex}
+                cell={cell}
+                turn={turn}
+                setTurn={setTurn}
+              />
             ))}
           </View>
         ))}
